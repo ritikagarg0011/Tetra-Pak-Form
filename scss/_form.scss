@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+// global classes
+button {
+  border: 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+input,
+textarea,
+select {
+  @include border;
+  padding: 6px;
+}
+
+.error {
+  color: $red-color;
+  @extend .f-14-400;
+}
+
+.errorfield {
+  border: 1px solid $red-color;
+}
+
+.successfield {
+  border: 1px solid $green-color;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.line-height-1 {
+  line-height: 1.5;
+}
+
+.f-10-500 {
+  font-size: $fs-10;
+  font-weight: $fw-500;
+}
+
+.f-14-400 {
+  font-size: $fs-14;
+  font-weight: $fw-400;
+}
+
+.f-14-500 {
+  font-size: $fs-14;
+  font-weight: $fw-500;
+}
+
+.f-18-700 {
+  font-size: $fs-18;
+  font-weight: $fw-700;
+}
+
+.f-32-700 {
+  font-size: $fs-32;
+  font-weight: $fw-700;
+}
+
+.btn-primary {
+  @include border;
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: $white-color;
+  padding: 4px;
+}
+
+//form css
+.logo {
+  height: 80px;
+  margin: 0 20px;
+  width: 130px;
+
+  img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+    }
+}
+
+.container {
+  .side-menu {
+    background-color: $primary-color;
+    color: $white-color;
+    height: 100%;
+    position: fixed;
+    width: 200px;
+    }
+
+  .main-content {
+    height: 100%;
+    margin-left: 224px;
+    overflow: auto;
+    width: 52em;
+    }
+}
+
+form {
+  .form-group {
+    @include flex-column;
+    margin-bottom: 14px;
+    width: 30rem;
+
+    &-disabled {
+      color: $gray-color;
+      opacity: 50%;
+
+      input {
+        border-color: $light-gray;
+        }
+    }
+
+    .form-label {
+      @extend .f-14-500;
+      margin-bottom: 2px;
+    }
+
+    .form-input {
+      @extend .f-14-400;
+    }
+
+    .form-button {
+      @extend .f-14-500;
+      cursor: pointer;
+      padding: 8px;
+      width: 10rem;
+    }
+  }
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  @include border;
+  @extend .f-14-500;
+  border-color: $primary-color;
+  color: $primary-color;
+  cursor: pointer;
+  display: inline-block;
+  margin: 8px 0;
+  padding: 6px 12px;
+  width: 8rem;
+}

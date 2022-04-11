@@ -1,0 +1,160 @@
+@font-face {
+  font-family: Montserrat;
+  src: url("../Montserrat-Regular.ttf") format("truetype"), url("../Montserrat-Medium.ttf") format("truetype"), url("../Montserrat-Bold.ttf") format("truetype");
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: 0;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+input,
+textarea,
+select {
+  border: 1.4px solid #4a4a4a;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.error {
+  color: #eb2424;
+}
+
+.errorfield {
+  border: 1px solid #eb2424;
+}
+
+.successfield {
+  border: 1px solid #068006;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.line-height-1 {
+  line-height: 1.5;
+}
+
+.f-10-500 {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.f-14-400, .error, form .form-group .form-input {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.f-14-500, form .form-group .form-label, form .form-group .form-button, .custom-file-upload {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.f-18-700 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.f-32-700 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.btn-primary {
+  border: 1.4px solid #4a4a4a;
+  border-radius: 4px;
+  background-color: #023f88;
+  border-color: #023f88;
+  color: #ffffff;
+  padding: 4px;
+}
+
+.logo {
+  height: 80px;
+  margin: 0 20px;
+  width: 130px;
+}
+
+.logo img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+
+.container .side-menu {
+  background-color: #023f88;
+  color: #ffffff;
+  height: 100%;
+  position: fixed;
+  width: 200px;
+}
+
+.container .main-content {
+  height: 100%;
+  margin-left: 224px;
+  overflow: auto;
+  width: 52em;
+}
+
+form .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 14px;
+  width: 30rem;
+}
+
+form .form-group-disabled {
+  color: #4a4a4a;
+  opacity: 50%;
+}
+
+form .form-group-disabled input {
+  border-color: #e5e5e5;
+}
+
+form .form-group .form-label {
+  margin-bottom: 2px;
+}
+
+form .form-group .form-button {
+  cursor: pointer;
+  padding: 8px;
+  width: 10rem;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  border: 1.4px solid #4a4a4a;
+  border-radius: 4px;
+  border-color: #023f88;
+  color: #023f88;
+  cursor: pointer;
+  display: inline-block;
+  margin: 8px 0;
+  padding: 6px 12px;
+  width: 8rem;
+}
+/*# sourceMappingURL=main.css.map */
