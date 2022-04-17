@@ -11,112 +11,123 @@
 </head>
 
 <body>
-    <div class="logo">
-        <img src="./tetra-pak-logo.png" alt="logo" />
-    </div>
-    <div class="container">
-        <div class="side-menu">
-            Side Menu
+    <header>
+        <div class="logo">
+            <img src="./tetra-pak-logo.png" alt="company logo" />
         </div>
-        <div class="main-content">
-            <h1 class="f-32-700 mb-20">Tetra Pak® PlantMaster COTS Support</h1>
-            <p class="f-14-400 mb-20 line-height-1">
-                The purpose of this service is to log a technical issue or product
-                support question related to the Tetra Pak PlantMaster Commercial
-                off-the-shelf (COTS) offering. For other queries please use the
-                standard communication channels.
-            </p>
-            <form id="form">
-                <div class="form-group">
-                    <h3 class="f-18-700 mb-20">Send request</h3>
-                    <div class="mb-20">
-                        <input type="radio" id="tech" name="request" value="tech-issues" />
-                        <label for="tech" class="f-14-500">Technical issues</label>
-                    </div>
-                    <div class="mb-20">
-                        <input type="radio" id="support" name="request" value="prod-support" />
-                        <label for="support" class="f-14-500">Product support</label>
-                    </div>
-                    <div class="error" id="radioError"></div>
+    </header>
+    <main>
+        <div class="container">
+            <aside>
+                <div class="side-menu">Side Menu</div>
+            </aside>
+            <section>
+                <div class="main-content">
+                    <h1 class="main-content__heading">Tetra Pak® PlantMaster COTS Support</h1>
+                    <p class="main-content__para">
+                        The purpose of this service is to log a technical issue or product
+                        support question related to the Tetra Pak PlantMaster Commercial
+                        off-the-shelf (COTS) offering. For other queries please use the
+                        standard communication channels.
+                    </p>
+                    <form id="form">
+                        <div class="form-group">
+                            <h3 class="form-group__heading">Send request</h3>
+                            <div class="form-group__radio">
+                                <input type="radio" id="tech" name="request" value="tech-issues" required />
+                                <label for="tech">Technical issues</label>
+                            </div>
+                            <div class="form-group__radio">
+                                <input type="radio" id="support" name="request" value="prod-support" required />
+                                <label for="support">Product support</label>
+                            </div>
+                            <div class="error" id="radioError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="company" class="form-group__label">Company</label>
+                            <input type="text" class="form-group__input" id="company" name="company" required />
+                            <div class="error" id="companyError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer" class="form-group__label">Customer site</label>
+                            <input type="text" class="form-group__input" id="customer" name="customer" required />
+                            <div class="error" id="customerError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="systems" class="form-group__label">Affected systems</label>
+                            <select id="systems" class="form-group__input" required>
+                                <option value="" selected>Select from list...</option>
+                                <option value="tetra-pak">Tetra Pak</option>
+                                <option value="tera-laval">Tetra Laval</option>
+                                <option value="delaval">Delaval</option>
+                            </select>
+                            <div class="error" id="sysError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="product" class="form-group__label">Product involved</label>
+                            <select id="product" class="form-group__input" required>
+                                <option value="" selected>Select from list...</option>
+                                <option value="diary">Diary</option>
+                                <option value="cheese">Cheese</option>
+                                <option value="juices">Juices</option>
+                            </select>
+                            <div class="error" id="prodError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="software" class="form-group__label">Software version (Optional)</label>
+                            <input type="text" class="form-group__input" id="software" name="software" />
+                        </div>
+                        <div class="form-group">
+                            <label for="license" class="form-group__label">Engineering license serial number
+                                (Optional)</label>
+                            <input type="text" class="form-group__input" id="license" name="license" />
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="form-group__label">Short description</label>
+                            <input type="text" class="form-group__input" id="description" name="description" required />
+                            <div class="error" id="descError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="file" class="form-group__label">Select a file (Optional)</label>
+                            <label for="file-upload" class="form-group__upload">
+                                Select a file
+                                <i class="fa-solid fa-plus"></i>
+                            </label>
+                            <input id="file-upload" type="file" />
+                            <p class="form-group__para">Max file size: 10 MB</p>
+                            <p class="form-group__para">File formats: No exe, zip</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="question" class="form-group__label">Question</label>
+                            <textarea name="question" class="form-group__input" id="question" cols="30" rows="10"
+                                required></textarea>
+                            <div class="error" id="questionError"></div>
+                        </div>
+                        <div class="form-group form-group--disabled">
+                            <label for="name" class="form-group__label">Name</label>
+                            <input type="text" class="form-group__input" id="name" name="name" value="John Doe"
+                                disabled />
+                        </div>
+                        <div class="form-group form-group--disabled">
+                            <label for="email" class="form-group__label">Email address</label>
+                            <input type="email" class="form-group__input" id="email" name="email"
+                                value="name@domain.com" disabled />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-group__label">Telephone (Optional)</label>
+                            <input type="number" class="form-group__input" id="phone" name="phone" />
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn--primary form-group__button" id="submit"
+                                onclick="validate()">
+                                Submit request &nbsp; &#8250;
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="company" class="form-label">Company</label>
-                    <input type="text" class="form-input" id="company" name="company" />
-                    <div class="error" id="companyError"></div>
-                </div>
-                <div class="form-group">
-                    <label for="customer" class="form-label">Customer site</label>
-                    <input type="text" class="form-input" id="customer" name="customer" />
-                    <div class="error" id="customerError"></div>
-                </div>
-                <div class="form-group">
-                    <label for="systems" class="form-label">Affected systems</label>
-                    <select id="systems" class="form-input">
-                        <option value="" selected>Select from list...</option>
-                        <option value="tetra-pak">Tetra Pak</option>
-                        <option value="tera-laval">Tetra Laval</option>
-                        <option value="delaval">Delaval</option>
-                    </select>
-                    <div class="error" id="sysError"></div>
-                </div>
-                <div class="form-group">
-                    <label for="product" class="form-label">Product involved</label>
-                    <select id="product" class="form-input">
-                        <option value="" selected>Select from list...</option>
-                        <option value="diary">Diary</option>
-                        <option value="cheese">Cheese</option>
-                        <option value="juices">Juices</option>
-                    </select>
-                    <div class="error" id="prodError"></div>
-                </div>
-                <div class="form-group">
-                    <label for="software" class="form-label">Software version (Optional)</label>
-                    <input type="text" class="form-input" id="software" name="software" />
-                </div>
-                <div class="form-group">
-                    <label for="license" class="form-label">Engineering license serial number (Optional)</label>
-                    <input type="text" class="form-input" id="license" name="license" />
-                </div>
-                <div class="form-group">
-                    <label for="description" class="form-label">Short description</label>
-                    <input type="text" class="form-input" id="description" name="description" />
-                    <div class="error" id="descError"></div>
-                </div>
-                <div class="form-group">
-                    <label for="file" class="form-label">Select a file (Optional)</label>
-                    <label for="file-upload" class="custom-file-upload">
-                        Select a file
-                        <i class="fa-solid fa-plus"></i>
-                    </label>
-                    <input id="file-upload" type="file" />
-                    <p class="f-10-500">Max file size: 10 MB</p>
-                    <p class="f-10-500">File formats: No exe, zip</p>
-                </div>
-                <div class="form-group">
-                    <label for="question" class="form-label">Question</label>
-                    <textarea name="question" class="form-input" id="question" cols="30" rows="10"></textarea>
-                    <div class="error" id="questionError"></div>
-                </div>
-                <div class="form-group form-group-disabled">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-input" id="name" name="name" value="John Doe" disabled />
-                </div>
-                <div class="form-group form-group-disabled">
-                    <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-input" id="email" name="email" value="name@domain.com" disabled/>
-                </div>
-                <div class="form-group">
-                    <label for="phone" class="form-label">Telephone (Optional)</label>
-                    <input type="number" class="form-input" id="phone" name="phone" />
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn-primary form-button" id="submit" onclick="validate()">
-                         Submit request &nbsp; &#8250;
-                    </button>
-                </div>
-            </form>
+            </section>
         </div>
-    </div>
+    </main>
     <script src="./form.js"></script>
 </body>
 

@@ -1,19 +1,19 @@
 //font-family
 @font-face {
   font-family: Montserrat;
-  src: url("../Montserrat-Regular.ttf") format('truetype'),
-  url("../Montserrat-Medium.ttf") format('truetype'),
-  url("../Montserrat-Bold.ttf") format('truetype');
+  src: url('../Montserrat-Regular.ttf') format('truetype'),
+  url('../Montserrat-Medium.ttf') format('truetype'),
+  url('../Montserrat-Bold.ttf') format('truetype');
 }
 
 //font-size
-$fs-10: 10px;
-$fs-14: 14px;
-$fs-18: 18px;
-$fs-32: 32px;
+$fs-xs: 10px;
+$fs-sm: 14px;
+$fs-lg: 18px;
+$fs-xl: 32px;
 
 //font-weight
-$fw-400: 400;
-$fw-500: 500;
-$fw-700: 700;
+$fw-reg: 400;
+$fw-md: 500;
+$fw-bold: 700;
 

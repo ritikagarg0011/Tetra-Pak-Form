@@ -6,8 +6,29 @@
 }
 
 // global classes
-button {
-  border: 0;
+%font-xs {
+  font-size: $fs-xs;
+  font-weight: $fw-md;
+}
+
+%font-sm {
+  font-size: $fs-sm;
+  font-weight: $fw-reg;
+}
+
+%font-smmd {
+  font-size: $fs-sm;
+  font-weight: $fw-md;
+}
+
+%font-lg {
+  font-size: $fs-lg;
+  font-weight: $fw-bold;
+}
+
+%font-xl {
+  font-size: $fs-xl;
+  font-weight: $fw-bold;
 }
 
 input:focus,
@@ -23,9 +44,13 @@ select {
   padding: 6px;
 }
 
+button {
+  border: 0;
+}
+
 .error {
+  @extend %font-sm;
   color: $red-color;
-  @extend .f-14-400;
 }
 
 .errorfield {
@@ -36,40 +61,7 @@ select {
   border: 1px solid $green-color;
 }
 
-.mb-20 {
-  margin-bottom: 20px;
-}
-
-.line-height-1 {
-  line-height: 1.5;
-}
-
-.f-10-500 {
-  font-size: $fs-10;
-  font-weight: $fw-500;
-}
-
-.f-14-400 {
-  font-size: $fs-14;
-  font-weight: $fw-400;
-}
-
-.f-14-500 {
-  font-size: $fs-14;
-  font-weight: $fw-500;
-}
-
-.f-18-700 {
-  font-size: $fs-18;
-  font-weight: $fw-700;
-}
-
-.f-32-700 {
-  font-size: $fs-32;
-  font-weight: $fw-700;
-}
-
-.btn-primary {
+.btn--primary {
   @include border;
   background-color: $primary-color;
   border-color: $primary-color;
@@ -87,7 +79,7 @@ select {
     height: 100%;
     object-fit: contain;
     width: 100%;
-    }
+  }
 }
 
 .container {
@@ -97,14 +89,25 @@ select {
     height: 100%;
     position: fixed;
     width: 200px;
-    }
+  }
 
   .main-content {
     height: 100%;
     margin-left: 224px;
     overflow: auto;
     width: 52em;
+
+    &__heading {
+      @extend %font-xl;
+      margin-bottom: 20px;
     }
+
+    &__para {
+      @extend %font-sm;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+  }
 }
 
 form {
@@ -113,45 +116,62 @@ form {
     margin-bottom: 14px;
     width: 30rem;
 
-    &-disabled {
+    &--disabled {
       color: $gray-color;
       opacity: 50%;
 
       input {
         border-color: $light-gray;
-        }
+      }
     }
 
-    .form-label {
-      @extend .f-14-500;
+    &__radio {
+      margin-bottom: 20px;
+
+      label {
+        @extend %font-smmd;
+      }
+    }
+
+    &__heading {
+      @extend %font-lg;
+      margin-bottom: 20px;
+    }
+
+    &__label {
+      @extend %font-smmd;
       margin-bottom: 2px;
     }
 
-    .form-input {
-      @extend .f-14-400;
+    &__input {
+      @extend %font-sm;
     }
 
-    .form-button {
-      @extend .f-14-500;
+    input[type='file'] {
+      display: none;
+    }
+
+    &__upload {
+      @extend %font-smmd;
+      @include border;
+      border-color: $primary-color;
+      color: $primary-color;
+      cursor: pointer;
+      display: inline-block;
+      margin: 8px 0;
+      padding: 6px 12px;
+      width: 8rem;
+    }
+
+    &__para {
+      @extend %font-xs;
+    }
+
+    &__button {
+      @extend %font-smmd;
       cursor: pointer;
       padding: 8px;
       width: 10rem;
     }
   }
-}
-
-input[type="file"] {
-  display: none;
-}
-
-.custom-file-upload {
-  @include border;
-  @extend .f-14-500;
-  border-color: $primary-color;
-  color: $primary-color;
-  cursor: pointer;
-  display: inline-block;
-  margin: 8px 0;
-  padding: 6px 12px;
-  width: 8rem;
 }
