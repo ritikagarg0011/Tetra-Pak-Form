@@ -5,7 +5,7 @@
   padding: 0;
 }
 
-// global classes
+// ********* global classes **************
 %font-xs {
   font-size: $fs-xs;
   font-weight: $fw-md;
@@ -29,12 +29,6 @@
 %font-xl {
   font-size: $fs-xl;
   font-weight: $fw-bold;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
 }
 
 input,
@@ -69,7 +63,7 @@ button {
   padding: 4px;
 }
 
-//form css
+// ************** main css ******************
 .logo {
   height: 80px;
   margin: 0 20px;
@@ -111,6 +105,10 @@ button {
 }
 
 form {
+  fieldset {
+    border: 0;
+  }
+
   .form-group {
     @include flex-column;
     margin-bottom: 14px;
@@ -119,10 +117,6 @@ form {
     &--disabled {
       color: $gray-color;
       opacity: 50%;
-
-      input {
-        border-color: $light-gray;
-      }
     }
 
     &__radio {
@@ -145,10 +139,14 @@ form {
 
     &__input {
       @extend %font-sm;
+
+      &:focus {
+        outline: none;
+      }
     }
 
-    input[type='file'] {
-      display: none;
+    &__input--disabled {
+      border-color: $light-gray;
     }
 
     &__upload {
@@ -161,6 +159,10 @@ form {
       margin: 8px 0;
       padding: 6px 12px;
       width: 8rem;
+    }
+
+    &__input-upload {
+      display: none;
     }
 
     &__para {

@@ -31,8 +31,8 @@
                         standard communication channels.
                     </p>
                     <form id="form">
-                        <div class="form-group">
-                            <h3 class="form-group__heading">Send request</h3>
+                        <fieldset class="form-group">
+                            <legend class="form-group__heading">Send request</legend>
                             <div class="form-group__radio">
                                 <input type="radio" id="tech" name="request" value="tech-issues" required />
                                 <label for="tech">Technical issues</label>
@@ -42,7 +42,7 @@
                                 <label for="support">Product support</label>
                             </div>
                             <div class="error" id="radioError"></div>
-                        </div>
+                        </fieldset>
                         <div class="form-group">
                             <label for="company" class="form-group__label">Company</label>
                             <input type="text" class="form-group__input" id="company" name="company" required />
@@ -88,12 +88,12 @@
                             <div class="error" id="descError"></div>
                         </div>
                         <div class="form-group">
-                            <label for="file" class="form-group__label">Select a file (Optional)</label>
+                            <label class="form-group__label">Select a file (Optional)</label>
                             <label for="file-upload" class="form-group__upload">
                                 Select a file
                                 <i class="fa-solid fa-plus"></i>
                             </label>
-                            <input id="file-upload" type="file" />
+                            <input id="file-upload" type="file" class="form-group__input-upload" />
                             <p class="form-group__para">Max file size: 10 MB</p>
                             <p class="form-group__para">File formats: No exe, zip</p>
                         </div>
@@ -105,12 +105,12 @@
                         </div>
                         <div class="form-group form-group--disabled">
                             <label for="name" class="form-group__label">Name</label>
-                            <input type="text" class="form-group__input" id="name" name="name" value="John Doe"
-                                disabled />
+                            <input type="text" class="form-group__input--disabled" id="name" name="name"
+                                value="John Doe" disabled />
                         </div>
                         <div class="form-group form-group--disabled">
                             <label for="email" class="form-group__label">Email address</label>
-                            <input type="email" class="form-group__input" id="email" name="email"
+                            <input type="email" class="form-group__input--disabled" id="email" name="email"
                                 value="name@domain.com" disabled />
                         </div>
                         <div class="form-group">

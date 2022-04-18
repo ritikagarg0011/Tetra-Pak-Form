@@ -12,7 +12,7 @@
 }
 
 form .form-group__para {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -34,12 +34,6 @@ form .form-group__heading {
 .container .main-content__heading {
   font-size: 32px;
   font-weight: 700;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
 }
 
 input,
@@ -112,6 +106,10 @@ button {
   margin-bottom: 20px;
 }
 
+form fieldset {
+  border: 0;
+}
+
 form .form-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -129,10 +127,6 @@ form .form-group--disabled {
   opacity: 50%;
 }
 
-form .form-group--disabled input {
-  border-color: #e5e5e5;
-}
-
 form .form-group__radio {
   margin-bottom: 20px;
 }
@@ -145,8 +139,12 @@ form .form-group__label {
   margin-bottom: 2px;
 }
 
-form .form-group input[type='file'] {
-  display: none;
+form .form-group__input:focus {
+  outline: none;
+}
+
+form .form-group__input--disabled {
+  border-color: #e5e5e5;
 }
 
 form .form-group__upload {
@@ -159,6 +157,10 @@ form .form-group__upload {
   margin: 8px 0;
   padding: 6px 12px;
   width: 8rem;
+}
+
+form .form-group__input-upload {
+  display: none;
 }
 
 form .form-group__button {
