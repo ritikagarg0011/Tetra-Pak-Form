@@ -1,0 +1,26 @@
+{
+  "data": {
+    "Production Control": [
+      {
+        "product": "TIA Portal"
+      },
+      {
+        "product": "Control Logix"
+      },
+      {
+        "product": "Orion"
+      },
+      {
+        "product": "Archestra System Platform"
+      }
+    ]
+  },
+  "MES": [
+    {
+      "product": "Production Integrator"
+    },
+    {
+      "product": "Aveva MES SI-Kit"
+    }
+  ]
+}

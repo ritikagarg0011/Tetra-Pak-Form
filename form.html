@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./scss/main.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <!-- <script src="./form.js" defer></script> -->
     <title>Tetra Pak</title>
 </head>
 
@@ -23,7 +25,9 @@
             </aside>
             <section>
                 <div class="main-content">
-                    <h1 class="main-content__heading">Tetra Pak® PlantMaster COTS Support</h1>
+                    <h1 class="main-content__heading">
+                        Tetra Pak® PlantMaster COTS Support
+                    </h1>
                     <p class="main-content__para">
                         The purpose of this service is to log a technical issue or product
                         support question related to the Tetra Pak PlantMaster Commercial
@@ -55,21 +59,15 @@
                         </div>
                         <div class="form-group">
                             <label for="systems" class="form-group__label">Affected systems</label>
-                            <select id="systems" class="form-group__input" required>
-                                <option value="" selected>Select from list...</option>
-                                <option value="tetra-pak">Tetra Pak</option>
-                                <option value="tera-laval">Tetra Laval</option>
-                                <option value="delaval">Delaval</option>
+                            <select id="systems" class="form-group__input" onchange="selectAffectedSystem(this)" required>
+                                <!-- handlebar data -->
                             </select>
                             <div class="error" id="sysError"></div>
                         </div>
                         <div class="form-group">
                             <label for="product" class="form-group__label">Product involved</label>
                             <select id="product" class="form-group__input" required>
-                                <option value="" selected>Select from list...</option>
-                                <option value="diary">Diary</option>
-                                <option value="cheese">Cheese</option>
-                                <option value="juices">Juices</option>
+                                <!-- handlebar data -->
                             </select>
                             <div class="error" id="prodError"></div>
                         </div>
@@ -127,7 +125,18 @@
             </section>
         </div>
     </main>
-    <!-- <script src="./form.js"></script> -->
+    <script id="affectedSystems" type="text/x-handlebars-template">
+        <option value="" selected>Select from list...</option>
+        {{#each data}}
+        <option value="{{@key}}">{{@key}}</option>
+        {{/each}}
+    </script>
+    <script id="productInvolved" type="text/x-handlebars-template">
+        {{#each .}}
+        <option value={{product}}>{{product}}</option>
+        {{/each}}
+    </script>
+    <script src="handlebarsjs.js" defer></script>
 </body>
 
 </html>
