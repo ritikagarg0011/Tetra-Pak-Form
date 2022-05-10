@@ -14,7 +14,7 @@ let dropdownData = {
         product: "Archestra System Platform",
       },
     ],
-    MES: [
+    "MES": [
       {
         product: "Production Integrator",
       },
