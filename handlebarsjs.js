@@ -14,7 +14,7 @@ let dropdownData = {
         product: "Archestra System Platform",
       },
     ],
-    "MES": [
+    MES: [
       {
         product: "Production Integrator",
       },
@@ -30,12 +30,17 @@ let sytemTemplate = Handlebars.compile(affectedSystems);
 let system = document.getElementById("systems");
 system.innerHTML = sytemTemplate(dropdownData);
 
-function selectAffectedSystem(selectOption) {
-  let value = selectOption.value;
-  let prodData = dropdownData.data[value];
-  let productInvolved = document.getElementById("productInvolved").innerHTML;
-  let prodTemplate = Handlebars.compile(productInvolved);
-  let prodHTML = prodTemplate(prodData);
-  let product = document.getElementById("product");
-  product.innerHTML = prodHTML;
+class SelectAffectedSystem {
+  constructor() {}
+  selectAffectedSystem(selectOption) {
+    let value = selectOption.value;
+    let prodData = dropdownData.data[value];
+    let productInvolved = document.getElementById("productInvolved").innerHTML;
+    let prodTemplate = Handlebars.compile(productInvolved);
+    let prodHTML = prodTemplate(prodData);
+    let product = document.getElementById("product");
+    product.innerHTML = prodHTML;
+  }
 }
+
+export default SelectAffectedSystem;
